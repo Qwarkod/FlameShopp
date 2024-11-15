@@ -1,0 +1,17 @@
+{
+    "name": "flameshop-tg",
+    "version": "1.0.0",
+    "description": "FlameShop",
+    "main": "server/app.js",
+    "scripts": {
+        "start": "node server/app.js"
+    },
+    "dependencies": {
+        "axios": "^0.27.2",
+        "express": "^4.18.1"
+    },
+    "devDependencies": {},
+    "keywords": [],
+    "author": "",
+    "license": "ISC"
+}

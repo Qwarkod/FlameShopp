@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flame-Shop🎄</title>
+    <link rel="stylesheet" href="order-css/order-style.css">
+    <link rel="icon" href="./material/logo/logo.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&family=Rubik+Wet+Paint&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arima:wght@100..700&family=Oxanium:wght@200..800&family=Rubik+Wet+Paint&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arima:wght@100..700&family=Oswald:wght@200..700&family=Oxanium:wght@200..800&family=Rubik+Wet+Paint&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arima:wght@100..700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Oswald:wght@200..700&family=Oxanium:wght@200..800&family=Rubik+Wet+Paint&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <div class="logo"><a href="#main">Flame-Shop🎄</a></div>
+        <nav>
+            <ul>
+                <li class="separator">|</li>
+                <li><a href="#about">Про нас</a></li> <!-- Додана посилання "Про нас" -->
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Оформлення замовлення</h1>
+        
+
+        <form id="orderForm">
+            <input type="hidden" id="product" />
+            <input type="hidden" id="product-name" />
+            <input type="hidden" id="product-lenght" /> <!-- Зверніть увагу на помилку у написанні, може бути 'product-length' -->
+            <input type="hidden" id="product-price" />
+            <input type="hidden" id="product-color" />
+            <input type="hidden" id="ip-adress" />
+            <input type="hidden" id="shir" />
+            <input type="hidden" id="dovg" />
+    
+            <!-- Поле для введення імені та прізвища -->
+            <div class="number-text">
+                <h3>Ім'я фамілія:</h3>
+            </div>
+            <div class="number-input">
+                <input class="number-input__input" type="name" id="name" placeholder="Ім'я Фамілія">
+            </div>
+    
+            <!-- Поле для введення номера телефону -->
+            <div class="promo-text">
+                <h3>Номер телефону:</h3>
+            </div>
+            <div class="promo-input">
+                <input class="promo-input__input" type="text" id="phone" value="+380" maxlength="16">
+            </div>
+    
+            <!-- Кнопка підтвердження -->
+            <div class="button-container">
+                <button id="submit" type="submit" class="order-button">Підтвердити замовлення</button>
+            </div>
+        </form>
+    </main>
+
+
+
+
+
+
+
+
+
+
+    <footer>
+        <p>Підпишіться на інші соцмережі</p>
+        <div class="social-icons">
+            <a href="#"><img src="../other/icons/instagram-ico.png" alt="Instagram"></a>
+            <a href="#"><img src="../other/icons/facebook-ico.png" alt="Facebook"></a>
+            <a href="#"><img src="../other/icons/tiktok-logo.png" alt="TikTok"></a>
+        </div>
+        <div class="problems_is">
+            <p>Є складнощі?</p>
+            <p id="textToCopy" onclick="copyText()">
+                Телефонуйте - +380 95 504 4513
+                <span class="tooltip">Скопіювати номер</span>
+            </p>
+        </div>
+        <div id="notification" class="notification">Номер скопійовано!</div>
+
+
+    </footer>
+
+    <script>
+        function copyText() {
+            // Отримуємо текст з елемента
+            const number = '+380 95 504 45 13';
+
+            // Копіюємо текст у буфер обміну
+            navigator.clipboard.writeText(number).then(() => {
+                // Показуємо сповіщення
+                const notification = document.getElementById("notification");
+                notification.classList.add("show");
+
+                // Ховаємо сповіщення через 2 секунди
+                setTimeout(() => {
+                    notification.classList.remove("show");
+                }, 2000);
+            }).catch(err => {
+                console.error("Помилка копіювання: ", err);
+            });
+        }
+    </script>
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
